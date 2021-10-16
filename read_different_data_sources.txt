@@ -1,0 +1,61 @@
+#reading files in python
+import pandas as pd 
+
+#read csv files and print the header info of data (first five rows)
+data = pd.read_csv("example.csv", sep = ";")
+
+data.head(5)
+------------------------------------------------------------------------------
+# read .txt file
+text_file = open("example.txt", "r")
+lines = text_file.read()
+#show class type
+pring(type(lines))
+
+# print the data
+print(lines)
+-------------------------------------------------------------------------------
+# read JSON file and print it
+data = pd.read_json("example.json")
+print(data)
+-------------------------------------------------------------------------------
+# read xml file
+import bs4 import BeautifulSoup
+
+bs = BeautifulSoup(open("example.xml"), "xml")
+print(bs.prettify())
+-------------------------------------------------------------------------------
+# read html file
+filename = "example.html"
+f = open(filename, "r").read()
+print(f)
+-------------------------------------------------------------------------------
+# read zip file
+data = pd.read_csv("archive.zip", sep = ";")
+data.head(5)
+-------------------------------------------------------------------------------
+# read xlsx file
+data = pd.read_excel("example.xlsx", sheet_name = "sheet1")
+data.head(5)
+-------------------------------------------------------------------------------
+# read pdf file
+import PyPDF2
+
+# PDF --> Python-object
+pdfFileObj = open("example.pdf", "rb")
+pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+# show number of pages
+print("Number of pages in file:", pdfReader.numPages
+
+# Extract and print text from the first page
+pageObj = pdfReader.getPage(0)
+a       = pageObj.extractText()
+print("-------------------------------------")
+print("Text from pdf-document:", "\n")
+print(a[:23])
+--------------------------------------------------------------------------------
+# read image file
+import matplotlib.pyplot as plt
+image = plt.imread('example.jpeg')
+plt.imshow(image)
